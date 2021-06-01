@@ -6,6 +6,7 @@ export default {
     albums: [],
     artist: {},
     error: {},
+    loaded: false,
   },
   mutations: {
     updateAlbumsByArtist(state, results) {
@@ -14,15 +15,20 @@ export default {
       state.error = {};
     },
     updateWithErrors(state, error) {
-      state.matchingArtists = [];
+      state.albums = [];
       state.error = error;
+    },
+    setLoaded(state, loaded) {
+      state.loaded = loaded;
     },
   },
   actions: {
     fetchAlbumsByArtist({ commit }, artistId) {
+      commit('setLoaded', false);
       axios.get(`/api/artists/${artistId}/albums`)
         .then((result) => commit('updateAlbumsByArtist', result.data))
-        .catch((error) => commit('updateWithErrors', error));
+        .catch((error) => commit('updateWithErrors', error))
+        .finally(() => commit('setLoaded', true));
     },
   },
 };

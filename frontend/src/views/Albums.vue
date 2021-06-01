@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="loaded">
     <ErrorDisplayer :error="error"></ErrorDisplayer>
     <section>
       <div class="columns">
@@ -88,10 +88,12 @@ export default {
       searchText: '',
       currentPage: 1,
       itemsPerPage: 9,
+      isLoaded: false,
     };
   },
   created() {
     this.fetchAlbumsByArtist(this.artistId);
+    this.isLoaded = true;
   },
   methods: {
     ...mapActions('albums', ['fetchAlbumsByArtist']),
@@ -100,7 +102,7 @@ export default {
     },
   },
   computed: {
-    ...mapState('albums', ['albums', 'error', 'artist']),
+    ...mapState('albums', ['albums', 'error', 'artist', 'loaded']),
     filteredAlbums() {
       const lowerSearchText = this.searchText.trim().toLowerCase();
       return lowerSearchText.length !== 0

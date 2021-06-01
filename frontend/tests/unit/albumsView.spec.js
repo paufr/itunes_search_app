@@ -50,6 +50,7 @@ describe('Albums.vue', () => {
           artistId: 1234456,
         },
       ],
+      loaded: true,
     };
 
     // additional albums
