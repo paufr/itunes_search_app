@@ -1,0 +1,148 @@
+{
+    "resultCount": 16,
+    "results": [
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson/909253?uo=4",
+            "artistId": 909253,
+            "amgArtistId": 468749,
+            "primaryGenreName": "Rock",
+            "primaryGenreId": 21
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Big Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/big-jack-johnson/60808647?uo=4",
+            "artistId": 60808647,
+            "amgArtistId": 391,
+            "primaryGenreName": "Blues",
+            "primaryGenreId": 2
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Big Jack Johnson & The Oilers",
+            "artistLinkUrl": "https://music.apple.com/us/artist/big-jack-johnson-the-oilers/6499459?uo=4",
+            "artistId": 6499459,
+            "primaryGenreName": "Blues",
+            "primaryGenreId": 2
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Big Jack Johnson With the Cornlickers",
+            "artistLinkUrl": "https://music.apple.com/us/artist/big-jack-johnson-with-the-cornlickers/317538081?uo=4",
+            "artistId": 317538081,
+            "primaryGenreName": "Blues",
+            "primaryGenreId": 2
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson and His Orchestra",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson-and-his-orchestra/61762000?uo=4",
+            "artistId": 61762000,
+            "primaryGenreName": "Jazz",
+            "primaryGenreId": 11
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Evan Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-evan-johnson/904390688?uo=4",
+            "artistId": 904390688,
+            "primaryGenreName": "Rock",
+            "primaryGenreId": 21
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Big Jack Johnson and the Jelly Roll Kings",
+            "artistLinkUrl": "https://music.apple.com/us/artist/big-jack-johnson-and-the-jelly-roll-kings/261230766?uo=4",
+            "artistId": 261230766
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson/1507846626?uo=4",
+            "artistId": 1507846626,
+            "primaryGenreName": "Electronic",
+            "primaryGenreId": 7
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson/548543874?uo=4",
+            "artistId": 548543874,
+            "primaryGenreName": "House",
+            "primaryGenreId": 1048
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Hamma Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-hamma-johnson/128540930?uo=4",
+            "artistId": 128540930,
+            "amgArtistId": 935801,
+            "primaryGenreName": "Hip-Hop/Rap",
+            "primaryGenreId": 18
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson/1278478120?uo=4",
+            "artistId": 1278478120,
+            "primaryGenreName": "Country",
+            "primaryGenreId": 6
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Bumpy Johnson Jack Rabbit , Crook",
+            "artistLinkUrl": "https://music.apple.com/us/artist/bumpy-johnson-jack-rabbit-crook/252403218?uo=4",
+            "artistId": 252403218
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack's Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jacks-johnson/1199288400?uo=4",
+            "artistId": 1199288400,
+            "primaryGenreName": "Rock",
+            "primaryGenreId": 21
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack J Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-j-johnson/1482887828?uo=4",
+            "artistId": 1482887828,
+            "primaryGenreName": "Pop",
+            "primaryGenreId": 14
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-johnson/435621392?uo=4",
+            "artistId": 435621392,
+            "primaryGenreName": "Christian",
+            "primaryGenreId": 22
+        },
+        {
+            "wrapperType": "artist",
+            "artistType": "Artist",
+            "artistName": "Jack Alan Johnson",
+            "artistLinkUrl": "https://music.apple.com/us/artist/jack-alan-johnson/1254322757?uo=4",
+            "artistId": 1254322757,
+            "primaryGenreName": "Blues",
+            "primaryGenreId": 2
+        }
+    ]
+}
