@@ -16,7 +16,7 @@ Features:
 
 ## Run the app
 
- 1. Checkout the project from the repo. https://github.com/paufr/itunes_search_app.git
+ 1. Clone from repo. https://github.com/paufr/itunes_search_app.git
  2. Then apply the following step to execute it.
 	
 	
