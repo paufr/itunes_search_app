@@ -19,13 +19,12 @@ Features:
  1. Clone from repo. https://github.com/paufr/itunes_search_app.git
  2. Then apply the following step to execute it.
 	
-	
 	//frontend
 	cd frontend
 	npm install
 	npm build
 	npm run serve //it can be run separately from the backend
-
+	
 	//let's start with the backend
 	cd backend
 	npm install
@@ -45,7 +44,7 @@ Unit testing:
 You can also run the app from a Dockerfile (included in the project):
 
 	docker build -t itunes-search-app .
-	docker run -p 8080:8080 itunes-search-app
+	docker run -p 4000:4000 itunes-search-app
 
 
 ## [Task2: code snippet ](task2.md)

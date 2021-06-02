@@ -10,6 +10,6 @@ COPY backend/package*.json ./api/
 RUN cd api && npm install
 COPY backend/ ./api/
 
-EXPOSE 8080
+EXPOSE 4000
 
 CMD ["node", "./api/app.js"]
