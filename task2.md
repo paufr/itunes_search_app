@@ -20,14 +20,14 @@ To conclude, the code is not reusable at all, it is not easy to read, and it hid
 
 ## Step 2
 
-A possible solution could take advantage of the express middlewares when managing routes. That is, it will split the code into smaller functions that will be executed one after the other, processing smaller pieces of information and passing the data to the next middleware or failing. This will greatly contribute to the readability and understandability of the code, but it will also make it more reusable (middleware functions could be used for other methods and routes of the api).
+A possible solution could take advantage of the express middlewares when managing routes. That is, it will split the code into smaller functions that will be executed one after the other, processing smaller pieces of information and passing the data to the next middleware or failing. This will greatly contribute to the readability and understandability of the code, but it will also make it more reusable (middleware functions could be used in other methods and routes of the api).
 
 In this example, I will also use http-errors to easily manage the http exceptions the api might generate.
 
     const createHttpError = require("http-errors");
 
 ### 1) Validate request content and parameters
-This first middleware will check the body and input parameters of the request. The isValidShopId and isValidInvitation are not implemented for simplicity since they will not add much value to the exercice and the example does not specify the exact fields and correct formats that we could expect.
+This first middleware will check the body and input parameters of the request. The isValidShopId and isValidInvitation are functions are not included for simplicity since they will not add much value to the exercice and the example does not specify the exact fields and correct formats that we could expect.
 
 At least, isValidShopId should check the param is present and the value is acceptable (for instance, it could expect an Integer).
 Similarly, isValidInvitation should process the invitation to check all required fields are present and, for instance, it could check the
@@ -52,11 +52,11 @@ If the validations fail, then it fails with a BadRequest containing the specific
 
 ### 2) Find shop by id
 
-This is a major change from the original code. The original one requestes the auth system first to auth the invitation and then, if the shop does not exist, it returns a 500 response. Since a successful response must update a shop with a user, the new code will try to find that shop before the user is created. Otherwise, it could produce an inconclusive state (user invitation saved, but not found in any shop). Furthermore, invite api might not have any shop logic, so it will confirm invitation without knowing if the shop exists.
+This is a major change from the original code. The original one requests the auth system first to auth the invitation and then, if the shop does not exist, it returns a 500 response. Since a successful response must update a shop with a user, the new code will try to find that shop before the user is created. Otherwise, it could produce an inconclusive state (user invitation saved, but not found in any shop). Furthermore, invite api might not have any shop logic, so it will confirm invitation without knowing if the shop exists.
 
-As a note, I will be using Promises from ES6, the code is more readable and the exceptions will be better managed. Besides that, from the exceptions perspective, the code has been also improved so it will send a 400 Bad request if the shop does not exist or a 500 Internal Server Error if an error occurred while finding the shop.
+from the exceptions perspective, the code has also been improved so it will send a 400 Bad request if the shop does not exist or a 500 Internal Server Error if an error occurred while finding the shop.
 
-Finally, if the shop exists, it will be saved to a shop object local from req, so it can be reused and available to any other middleware that processes shops.
+Finally, if the shop exists, it will be saved to a shop local object from req, so it can be reused and available to any other middleware that processes shops.
 
     function findShopById(req, res, next) {
         Shop.findById(req.params.shopId)
@@ -79,7 +79,7 @@ In this step it will send the request to auth the user invitation and will save 
 To perform the request, I have also added an AuthSystemEndpoints with static methods that manages in one place the endpoints from the authSystem.
 
 Note: It was not clear from the original code whether a user can be invited to more than one shop or not.
-If so (as suggested in the new code), it will successfully continue through the middlewares. Otherwise,
+If so (as suggested in the new code), it will successfully continue through the middlewares even if the API responses 200. Otherwise,
 the code should be uncommented in order to fail (as it actually happened in the original code, but it could be a dev bug).
 
     function authUserInvitation(req, res, next) {
@@ -126,7 +126,7 @@ If the user could be invited, then the following middleware function will update
             });
     }
 
-To simplify the code, I also added the following function to return the build the needed arguments according to authId and email. Then, those arguments are passed to the function using spread.
+To simplify the code, I also added the following function to build and return the needed arguments according to authId and email. Then, those arguments are passed to the function using spread.
 
     function getFindUserAndUpdateParameters(authId, email) {
         return [{
@@ -144,7 +144,7 @@ To simplify the code, I also added the following function to return the build th
 ### 5) Update shop users
 Finally, as a last update, it updates the shop adding the new invitation and user to its invitations and users collection.
 As an improvement, apart from managing the exceptions, it will only update the users if the invitation is new
-(the user was not added to the shop). Additionally, the shop will only be saved when a user or invitation is added.
+(the user was not added to the shop). Additionally, the shop will only be saved if a user or invitation was added.
 
 
     function updateShopUsers(req, res, next) {
@@ -166,8 +166,8 @@ As an improvement, apart from managing the exceptions, it will only update the u
     }
 
 
-### 6) Send the response to the client
-If this middleware gets reached, then the whole execution succeed. In that case, it will return a 200 OK status and the
+### 6) Send response to the client
+If this middleware gets reached, then the whole execution succeeded. In that case, it will return a 200 OK status and the
 invitation content as a json.
 
     function sendInvitationResponse(req, res) {
@@ -176,10 +176,10 @@ invitation content as a json.
     }
 
 ### 7) Handle errors
-If an error was passed as a next parameter in any of the middlewares, this point will be immediately executed as a new middleware..
-If the error is a controlled http error, it will send the json response with the status code and message received.
+If an error was passed as a next argument in any of the previous middlewares, this function will be immediately executed as a next middleware.
+If the error is a known http error, it will send the json response with the status code and message received.
 Otherwise, it will mean the exception was not controlled. If that is the case, the error should be logged and just
-send a 500 error response.
+send a 500 error response (for simplicity, it will just log the error in the console, but it could use any other logging system).
 
     function handleErrors(error, req, res, next) {
         let httpError;
