@@ -20,16 +20,16 @@ Features:
  2. Then apply the following step to execute it.
 	
 	
-		//frontend
-		cd frontend
-		npm install
-		npm build
-		npm run serve //it can be run separately from the backend
+	//frontend
+	cd frontend
+	npm install
+	npm build
+	npm run serve //it can be run separately from the backend
 
-		//let's start with the backend
-		cd backend
-		npm install
-		npm start
+	//let's start with the backend
+	cd backend
+	npm install
+	npm start
 
 If the frontend is built, the backend will use the dist folder to directly serve the app (it is not neccessay to run the frontend, just to compile it).
 
@@ -45,7 +45,7 @@ Unit testing:
 You can also run the app from a Dockerfile (included in the project):
 
 	docker build -t itunes-search-app .
-	docker run -d -it -p  4000:4000--name vue-node-ui itunes-search-app
+	docker run -p 8080:8080 itunes-search-app
 
 
 ## [Task2: code snippet ](task2.md)

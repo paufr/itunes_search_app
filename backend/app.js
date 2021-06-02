@@ -12,7 +12,7 @@ const artistsController = new ArtistsController(
 );
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4000;
 
 app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: true }));
