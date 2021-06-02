@@ -11,7 +11,7 @@ Features:
  
  Tests:
  
- - Unit tests that covers both the front end and the backend.
+ - Unit tests that cover both the front end and the backend.
  - Some integration testing between the different components of the backend.
 
 ## Run the app
