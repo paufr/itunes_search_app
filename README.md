@@ -1,11 +1,11 @@
 # Itunes search app
 
-This project consists of a front end (vue js) and a backend (node js) that connects to the itunes search API to get infromation from artists and albums.
+This project consists of a front end (vue js) and a backend (node js) that connect to the itunes search API to get infromation from artists and albums.
 
 Features:
  - Searches artists in real time when typing.
  - Displays an album view that includes the albums from the artist selected.
- - Live search box to filter the existing results from an artist.
+ - Live search box to filter the existing album results by text.
  - Pagination when displaying the results.
  - Search history: possibility to easily explore again the albums recently visited.
  
@@ -31,7 +31,7 @@ Features:
 		npm install
 		npm start
 
-If the frontend is built, it will be used directly from the backend to serve the app (it is not neccessay to run the frontend, just to compile it).
+If the frontend is built, the backend will use the dist folder to directly serve the app (it is not neccessay to run the frontend, just to compile it).
 
 The frontend is supposed to listen to port 8080 and the backend will be listening requests from 4000. However, you can still change the port to run it in a different way.
 
@@ -43,9 +43,9 @@ Unit testing:
  2. Frontend: npm run test:unit
 
 You can also run the app from a Dockerfile (included in the project):
-	// build the image  
+
 	docker build -t itunes-search-app .
-	docker run -d -it -p  4000:4000--name vue-node-ui vue-node-image
+	docker run -d -it -p  4000:4000--name vue-node-ui itunes-search-app
 
 
 ## [Task2: code snippet ](task2.md)
